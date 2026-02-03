@@ -1,0 +1,211 @@
+import { Event, Artist } from '@/app/types';
+
+export const mockArtists: Artist[] = [
+  {
+    id: '1',
+    name: 'Wizkid',
+    genre: 'Afrobeats',
+    imageUrl: 'https://images.unsplash.com/photo-1744492407882-f58d42a6baf1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuaWdlcmlhbiUyMGFydGlzdCUyMHBlcmZvcm1pbmclMjBzdGFnZXxlbnwxfHx8fDE3Njk4NDkzMzd8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    bio: 'Wizkid is one of Africa\'s biggest music stars, known for his smooth Afrobeats sound.',
+    instagramUrl: 'https://instagram.com/wizkidayo'
+  },
+  {
+    id: '2',
+    name: 'Burna Boy',
+    genre: 'Afrobeats',
+    imageUrl: 'https://images.unsplash.com/photo-1766650577040-0bb7070328ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoaXBob3AlMjByYXBwZXIlMjBtaWNyb3Bob25lfGVufDF8fHx8MTc2OTg0OTMzOXww&ixlib=rb-4.1.0&q=80&w=1080',
+    bio: 'Grammy-winning artist Burna Boy brings authentic African Giant energy to every stage.',
+    instagramUrl: 'https://instagram.com/burnaboygram'
+  },
+  {
+    id: '3',
+    name: 'Tems',
+    genre: 'R&B',
+    imageUrl: 'https://images.unsplash.com/photo-1761901219072-491a18f3ccd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnb3NwZWwlMjBjaG9pciUyMHBlcmZvcm1hbmNlfGVufDF8fHx8MTc2OTg0OTMzOHww&ixlib=rb-4.1.0&q=80&w=1080',
+    bio: 'Tems has taken the world by storm with her soulful voice and unique sound.',
+    instagramUrl: 'https://instagram.com/temsbaby'
+  },
+  {
+    id: '4',
+    name: 'Asake',
+    genre: 'Amapiano',
+    imageUrl: 'https://images.unsplash.com/photo-1600542552868-56ed242290e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaiUyMG1peGluZyUyMHR1cm50YWJsZXN8ZW58MXx8fHwxNzY5ODQ5MzM4fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    bio: 'Asake blends Amapiano with Afrobeats for an electrifying performance.',
+    instagramUrl: 'https://instagram.com/asakemusic'
+  },
+  {
+    id: '5',
+    name: 'Sinach',
+    genre: 'Gospel',
+    imageUrl: 'https://images.unsplash.com/photo-1761901219072-491a18f3ccd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnb3NwZWwlMjBjaG9pciUyMHBlcmZvcm1hbmNlfGVufDF8fHx8MTc2OTg0OTMzOHww&ixlib=rb-4.1.0&q=80&w=1080',
+    bio: 'Sinach is one of the most influential gospel artists in Africa.',
+    instagramUrl: 'https://instagram.com/sinach'
+  },
+  {
+    id: '6',
+    name: 'The Cavemen',
+    genre: 'Highlife',
+    imageUrl: 'https://images.unsplash.com/photo-1687589891886-a8578a54ef76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqYXp6JTIwYmFuZCUyMHNheG9waG9uZXxlbnwxfHx8fDE3Njk3Njg4NTJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    bio: 'The Cavemen bring modern Highlife music with traditional instruments.',
+    instagramUrl: 'https://instagram.com/thecavemen'
+  },
+];
+
+export const mockEvents: Event[] = [
+  {
+    id: '1',
+    slug: 'afronation-lagos-2026',
+    title: 'Afro Nation Lagos',
+    description: 'The biggest Afrobeats festival returns to Lagos with an incredible lineup of Africa\'s finest artists. Experience three days of non-stop music, culture, and celebration.',
+    date: '2026-12-26',
+    time: '18:00',
+    venue: 'Eko Atlantic City',
+    city: 'Lagos',
+    genre: ['Afrobeats', 'Amapiano', 'Hip-Hop'],
+    imageUrl: 'https://images.unsplash.com/photo-1756978303719-57095d8bd250?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXNpYyUyMGZlc3RpdmFsJTIwY29uY2VydCUyMGNyb3dkfGVufDF8fHx8MTc2OTg0OTMzNnww&ixlib=rb-4.1.0&q=80&w=1080',
+    featured: true,
+    artists: [mockArtists[0], mockArtists[1], mockArtists[3]],
+    ticketTiers: [
+      { id: 't1', name: 'General Admission', price: 25000, available: true, description: 'Access to main stage area' },
+      { id: 't2', name: 'VIP', price: 75000, available: true, description: 'VIP area with exclusive lounge access' },
+      { id: 't3', name: 'VVIP', price: 150000, available: false, description: 'Meet & greet with artists, backstage access' },
+    ],
+    location: {
+      lat: 6.4098,
+      lng: 3.4111,
+      address: 'Eko Atlantic City, Victoria Island, Lagos'
+    },
+    capacity: 50000,
+    status: 'upcoming'
+  },
+  {
+    id: '2',
+    slug: 'burna-boy-live-abuja',
+    title: 'Burna Boy Live in Abuja',
+    description: 'The African Giant brings his electrifying performance to the capital. Get ready for an unforgettable night of music and energy.',
+    date: '2026-03-15',
+    time: '20:00',
+    venue: 'Velodrome Stadium',
+    city: 'Abuja',
+    genre: ['Afrobeats'],
+    imageUrl: 'https://images.unsplash.com/photo-1763178466088-09e3678eb56b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25jZXJ0JTIwdmVudWUlMjBvdXRkb29yJTIwZmVzdGl2YWx8ZW58MXx8fHwxNzY5ODQ5MzM3fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    featured: true,
+    artists: [mockArtists[1]],
+    ticketTiers: [
+      { id: 't4', name: 'Regular', price: 20000, available: true, description: 'Standing area' },
+      { id: 't5', name: 'Premium', price: 50000, available: true, description: 'Reserved seating' },
+      { id: 't6', name: 'Diamond', price: 100000, available: true, description: 'Front row seats with exclusive perks' },
+    ],
+    location: {
+      lat: 9.0579,
+      lng: 7.4951,
+      address: 'Velodrome Stadium, Package B, Abuja'
+    },
+    capacity: 15000,
+    status: 'selling-fast'
+  },
+  {
+    id: '3',
+    slug: 'gospel-praise-fest-port-harcourt',
+    title: 'Gospel Praise Festival',
+    description: 'A powerful night of worship and praise featuring Nigeria\'s top gospel artists. Join us for an uplifting spiritual experience.',
+    date: '2026-04-20',
+    time: '17:00',
+    venue: 'Liberation Stadium',
+    city: 'Port Harcourt',
+    genre: ['Gospel'],
+    imageUrl: 'https://images.unsplash.com/photo-1761901219072-491a18f3ccd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnb3NwZWwlMjBjaG9pciUyMHBlcmZvcm1hbmNlfGVufDF8fHx8MTc2OTg0OTMzOHww&ixlib=rb-4.1.0&q=80&w=1080',
+    featured: false,
+    artists: [mockArtists[4]],
+    ticketTiers: [
+      { id: 't7', name: 'General', price: 5000, available: true, description: 'General admission' },
+      { id: 't8', name: 'VIP', price: 15000, available: true, description: 'VIP seating area' },
+    ],
+    location: {
+      lat: 4.8156,
+      lng: 7.0498,
+      address: 'Liberation Stadium, Elekahia, Port Harcourt'
+    },
+    capacity: 20000,
+    status: 'upcoming'
+  },
+  {
+    id: '4',
+    slug: 'ibadan-jazz-night',
+    title: 'Ibadan Jazz & Highlife Night',
+    description: 'Celebrate the golden sounds of jazz and highlife music. An evening of smooth melodies and cultural heritage.',
+    date: '2026-05-10',
+    time: '19:00',
+    venue: 'Jogor Center',
+    city: 'Ibadan',
+    genre: ['Jazz', 'Highlife'],
+    imageUrl: 'https://images.unsplash.com/photo-1687589891886-a8578a54ef76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqYXp6JTIwYmFuZCUyMHNheG9waG9uZXxlbnwxfHx8fDE3Njk3Njg4NTJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    featured: false,
+    artists: [mockArtists[5]],
+    ticketTiers: [
+      { id: 't9', name: 'Standard', price: 8000, available: true, description: 'Standard seating' },
+      { id: 't10', name: 'Premium', price: 20000, available: true, description: 'Premium tables with complimentary drinks' },
+    ],
+    location: {
+      lat: 7.3775,
+      lng: 3.9470,
+      address: 'Jogor Center, Ring Road, Ibadan'
+    },
+    capacity: 5000,
+    status: 'upcoming'
+  },
+  {
+    id: '5',
+    slug: 'wizkid-made-in-lagos-tour',
+    title: 'Wizkid: Made in Lagos Tour',
+    description: 'Starboy returns home with the Made in Lagos experience. Witness chart-topping hits performed live.',
+    date: '2026-06-25',
+    time: '21:00',
+    venue: 'Tafawa Balewa Square',
+    city: 'Lagos',
+    genre: ['Afrobeats', 'R&B'],
+    imageUrl: 'https://images.unsplash.com/photo-1744492407882-f58d42a6baf1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuaWdlcmlhbiUyMGFydGlzdCUyMHBlcmZvcm1pbmclMjBzdGFnZXxlbnwxfHx8fDE3Njk4NDkzMzd8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    featured: true,
+    artists: [mockArtists[0], mockArtists[2]],
+    ticketTiers: [
+      { id: 't11', name: 'Early Bird', price: 15000, available: false, description: 'Early bird special (Sold Out)' },
+      { id: 't12', name: 'Regular', price: 30000, available: true, description: 'General admission' },
+      { id: 't13', name: 'VIP', price: 80000, available: true, description: 'VIP section with bar access' },
+    ],
+    location: {
+      lat: 6.4444,
+      lng: 3.3964,
+      address: 'Tafawa Balewa Square, Lagos Island, Lagos'
+    },
+    capacity: 30000,
+    status: 'selling-fast'
+  },
+  {
+    id: '6',
+    slug: 'calabar-carnival-concert',
+    title: 'Calabar Carnival Concert',
+    description: 'Part of Africa\'s biggest street party, this concert features diverse Nigerian music celebrating our rich culture.',
+    date: '2026-12-27',
+    time: '16:00',
+    venue: 'U.J. Esuene Stadium',
+    city: 'Calabar',
+    genre: ['Afrobeats', 'Highlife', 'Hip-Hop'],
+    imageUrl: 'https://images.unsplash.com/photo-1756978303719-57095d8bd250?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXNpYyUyMGZlc3RpdmFsJTIwY29uY2VydCUyMGNyb3dkfGVufDF8fHx8MTc2OTg0OTMzNnww&ixlib=rb-4.1.0&q=80&w=1080',
+    featured: false,
+    artists: [mockArtists[0], mockArtists[3], mockArtists[5]],
+    ticketTiers: [
+      { id: 't14', name: 'Festival Pass', price: 12000, available: true, description: 'Access to concert area' },
+      { id: 't15', name: 'VIP Pass', price: 35000, available: true, description: 'VIP area with amenities' },
+    ],
+    location: {
+      lat: 4.9517,
+      lng: 8.3417,
+      address: 'U.J. Esuene Stadium, Calabar'
+    },
+    capacity: 25000,
+    status: 'upcoming'
+  },
+];
+
+export const cities = ['Lagos', 'Abuja', 'Port Harcourt', 'Ibadan', 'Kano', 'Enugu', 'Calabar'];
+export const genres = ['Afrobeats', 'Hip-Hop', 'Gospel', 'Jazz', 'Amapiano', 'Highlife', 'R&B'];
