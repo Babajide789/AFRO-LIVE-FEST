@@ -2,9 +2,9 @@
 // import EventDetailPage from "./events/[slug]/page";
 // import { ArtistsPage } from "./pagesComponent/ArtistsPage";
 // import { EventsPage } from "./pagesComponent/EventsPage";
-// import { HomePage } from "./pagesComponent/HomePage";
+import { HomePage } from "./pagesComponent/HomePage";
 // import { MapPage } from "./pagesComponent/MapPage";
-import { NotFoundPage } from "./pagesComponent/NotFoundPage";
+// import { NotFoundPage } from "./pagesComponent/NotFoundPage";
 
 export default function Home() {
   return (
@@ -12,9 +12,9 @@ export default function Home() {
       {/* <ArtistsPage/> */}
       {/* <EventDetailPage/> */}
       {/* <EventsPage/> */}
-      {/* <HomePage/> */}
+      <HomePage/>
       {/* <MapPage/> */}
-      <NotFoundPage/>
+      {/* <NotFoundPage/> */}
     </>
   );
 }
