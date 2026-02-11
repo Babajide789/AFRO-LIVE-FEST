@@ -1,3 +1,5 @@
+"use client";
+
 import Link from 'next/link';
 import { Music, Instagram, Twitter, Facebook, Youtube } from 'lucide-react';
 import { Input } from '@/components/ui/input';
@@ -13,7 +15,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="flex size-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#008751] to-[#FF6B00]">
+              <div className="flex size-10 items-center justify-center rounded-lg bg-linear-to-br from-[#008751] to-[#FF6B00]">
                 <Music className="size-6 text-white" />
               </div>
               <span className="text-xl font-bold">NaijaLive</span>

@@ -9,10 +9,11 @@ import {
   ArrowLeft,
   Share2,
   Heart,
-  Ticket,
 } from 'lucide-react'
 import { format } from 'date-fns'
 import { toast } from 'sonner'
+import { useState } from 'react'
+import Image from 'next/image'
 
 import { mockEvents } from '@/app/data/mockData'
 import { Button } from '@/components/ui/button'
@@ -27,14 +28,45 @@ import {
 } from '@/components/ui/accordion'
 import { MapPlaceholder } from '@/app/customComponents/MapPlaceholder'
 
+import { useCart } from '@/app/context/CartContext'
+
+
 export default function EventDetailPage() {
   const router = useRouter()
   const params = useParams<{ slug: string }>()
   const slug = params?.slug
 
+  type SelectedTiers = Record<string, number>
+
+const [selectedTiers, setSelectedTiers] = useState<SelectedTiers>({})
+
+const { addItems } = useCart()
+
+
+
   if (!slug) return null
 
   const event = mockEvents.find((e) => e.slug === slug)
+
+  const incrementTier = (tierId: string) => {
+  setSelectedTiers(prev => ({
+    ...prev,
+    [tierId]: (prev[tierId] || 0) + 1,
+  }))
+}
+
+const decrementTier = (tierId: string) => {
+  setSelectedTiers(prev => {
+    const nextQty = (prev[tierId] || 0) - 1
+    if (nextQty <= 0) {
+      const { [tierId]: _, ...rest } = prev
+      return rest
+    }
+    return { ...prev, [tierId]: nextQty }
+  })
+}
+
+const hasTickets = Object.keys(selectedTiers).length > 0
 
 
   if (!event) {
@@ -59,10 +91,13 @@ export default function EventDetailPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Banner */}
       <div className="relative h-100 md:h-125 overflow-hidden">
-        <img
+        <Image
           src={event.imageUrl}
           alt={event.title}
-          className="w-full h-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />
 
@@ -137,10 +172,12 @@ export default function EventDetailPage() {
                     key={artist.id}
                     className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg"
                   >
-                    <img
+                    <Image
                       src={artist.imageUrl}
                       alt={artist.name}
-                      className="size-16 rounded-full object-cover"
+                      width={64}
+                      height={64}
+                      className="rounded-full object-cover"
                     />
                     <div>
                       <h3 className="font-semibold">{artist.name}</h3>
@@ -176,55 +213,119 @@ export default function EventDetailPage() {
           </div>
 
           {/* Sidebar */}
-          <Card className="p-6 sticky top-20">
-            <h3 className="text-xl font-bold mb-4">Get Tickets</h3>
+          {/* Sidebar */}
+<Card className="p-6 sticky top-20 h-fit">
+  <h3 className="text-xl font-bold mb-4">Get Tickets</h3>
 
-            {event.ticketTiers.map((tier) => (
-              <div key={tier.id} className="mb-4 border p-4 rounded-lg">
-                <div className="flex justify-between mb-2">
-                  <h4 className="font-semibold">{tier.name}</h4>
-                  <span className="font-bold text-[#008751]">
-                    ₦{tier.price.toLocaleString()}
-                  </span>
-                </div>
+  {event.ticketTiers.map(tier => {
+    const quantity = selectedTiers[tier.id] || 0
+    const totalPrice = quantity * tier.price
 
-                <Button
-                  className="w-full"
-                  disabled={!tier.available}
-                  onClick={() =>
-                    tier.available &&
-                    toast.success(`${tier.name} ticket added`)
-                  }
-                >
-                  {tier.available ? 'Select Ticket' : 'Sold Out'}
-                </Button>
-              </div>
-            ))}
+    return (
+      <div
+        key={tier.id}
+        className="mb-4 border p-4 rounded-lg space-y-3"
+      >
+        <div className="flex justify-between">
+          <h4 className="font-semibold">{tier.name}</h4>
+          <span className="font-bold text-[#008751]">
+            ₦{tier.price.toLocaleString()}
+          </span>
+        </div>
 
-            <Separator className="my-6" />
+        {/* Quantity Controls */}
+        <div className="flex items-center justify-between">
+          <span className="text-sm text-gray-600">Quantity</span>
 
-            <div className="flex gap-2">
-              <Button
-                variant="outline"
-                className="flex-1"
-                onClick={() => toast.success('Saved')}
-              >
-                <Heart className="size-4 mr-2" />
-                Save
-              </Button>
-              <Button
-                variant="outline"
-                className="flex-1"
-                onClick={() => {
-                  navigator.clipboard.writeText(window.location.href)
-                  toast.success('Link copied')
-                }}
-              >
-                <Share2 className="size-4 mr-2" />
-                Share
-              </Button>
-            </div>
-          </Card>
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => decrementTier(tier.id)}
+              disabled={quantity === 0}
+            >
+              −
+            </Button>
+
+            <span className="w-6 text-center font-semibold">
+              {quantity}
+            </span>
+
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => incrementTier(tier.id)}
+              disabled={!tier.available}
+            >
+              +
+            </Button>
+          </div>
+        </div>
+
+        {/* Tier Total */}
+        {quantity > 0 && (
+          <p className="text-sm font-medium text-right">
+            Total: ₦{totalPrice.toLocaleString()}
+          </p>
+        )}
+      </div>
+    )
+  })}
+
+  <Separator className="my-6" />
+
+  {/* Add to Cart */}
+<Button
+  className="w-full"
+  disabled={!hasTickets}
+  onClick={() => {
+    const cartItems = Object.entries(selectedTiers).map(
+      ([tierId, quantity]) => {
+        const tier = event.ticketTiers.find(t => t.id === tierId)!
+
+        return {
+          eventId: event.id,
+          tierId: tier.id,
+          name: `${event.title} – ${tier.name}`,
+          price: tier.price,
+          quantity,
+        }
+      }
+    )
+
+    addItems(cartItems)
+
+    toast.success('Tickets added to cart 🎉')
+  }}
+>
+  Add to Cart
+</Button>
+
+
+
+  {/* <div className="flex gap-2 mt-4">
+    <Button
+      variant="outline"
+      className="flex-1"
+      onClick={() => toast.success('Saved')}
+    >
+      <Heart className="size-4 mr-2" />
+      Save
+    </Button>
+
+    <Button
+      variant="outline"
+      className="flex-1"
+      onClick={() => {
+        navigator.clipboard.writeText(window.location.href)
+        toast.success('Link copied')
+      }}
+    >
+      <Share2 className="size-4 mr-2" />
+      Share
+    </Button>
+  </div> */}
+</Card>
         </div>
       </div>
     </div>

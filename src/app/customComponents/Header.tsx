@@ -2,9 +2,12 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Music, Menu, X } from 'lucide-react'
+import { Music, Menu, X, ShoppingBag, ShoppingCart } from 'lucide-react'
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
+import { useCart } from '@/app/context/CartContext'
+
+
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -19,6 +22,9 @@ export function Header() {
 
   const isActive = (path: string) => pathname === path
 
+const { totalQuantity } = useCart()
+
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-backdrop-filter:bg-white/80">
       <div className="container mx-auto px-4">
@@ -28,7 +34,7 @@ export function Header() {
             href="/"
             className="flex items-center gap-2 transition-opacity hover:opacity-80"
           >
-            <div className="flex size-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#008751] to-[#FF6B00]">
+            <div className="flex size-10 items-center justify-center rounded-lg bg-linear-to-br from-[#008751] to-[#FF6B00]">
               <Music className="size-6 text-white" />
             </div>
             <div className="flex flex-col">
@@ -56,9 +62,15 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-gradient-to-r from-[#008751] to-[#FF6B00] hover:opacity-90">
-              Get Tickets
-            </Button>
+            <Link href="/cart" className="relative">
+  <ShoppingBag className="size-6 text-gray-700" />
+  {totalQuantity > 0 && (
+  <span className="absolute -top-2 -right-2 bg-[#008751] text-white text-xs rounded-full px-2">
+    {totalQuantity}
+  </span>
+  )}
+</Link>
+
           </div>
 
           {/* Mobile Menu Button */}
@@ -94,9 +106,11 @@ export function Header() {
                 </Link>
               ))}
 
-              <Button className="bg-gradient-to-r from-[#008751] to-[#FF6B00] hover:opacity-90 w-full">
-                Get Tickets
-              </Button>
+              <Link href="/cart" className="flex items-center gap-2">
+  <ShoppingBag className="size-5" />
+<span>Cart ({totalQuantity})</span>
+</Link>
+
             </div>
           </nav>
         )}
