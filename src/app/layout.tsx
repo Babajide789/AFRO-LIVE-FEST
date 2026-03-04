@@ -4,6 +4,8 @@ import "./globals.css";
 import { Header } from "./customComponents/Header";
 import { Footer } from "./customComponents/Footer";
 import { CartProvider } from "./context/CartContext";
+import Script from 'next/script'
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +32,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Script
+  src="https://js.paystack.co/v1/inline.js"
+  strategy="beforeInteractive"
+/>
+
         <CartProvider>
 <Header/>
          {children}

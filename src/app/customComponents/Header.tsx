@@ -63,13 +63,13 @@ const { totalQuantity } = useCart()
           {/* CTA Button */}
           <div className="hidden md:block">
             <Link href="/cart" className="relative">
-  <ShoppingBag className="size-6 text-gray-700" />
-  {totalQuantity > 0 && (
-  <span className="absolute -top-2 -right-2 bg-[#008751] text-white text-xs rounded-full px-2">
-    {totalQuantity}
-  </span>
-  )}
-</Link>
+            <ShoppingBag className="size-6 text-gray-700" />
+            {totalQuantity > 0 && (
+            <span className="absolute -top-2 -right-2 bg-[#008751] text-white text-xs rounded-full px-2">
+              {totalQuantity}
+            </span>
+            )}
+          </Link>
 
           </div>
 

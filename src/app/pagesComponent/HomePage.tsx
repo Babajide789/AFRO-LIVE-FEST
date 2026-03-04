@@ -5,6 +5,7 @@ import { ArrowRight, Calendar, MapPin, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { mockEvents } from '@/app/data/mockData'
 import { EventCard } from '../customComponents/EventCard'
+import Image from 'next/image'
 
 const featuredEvent = mockEvents.find(e => e.featured) || mockEvents[0]
 const upcomingEvents = mockEvents.slice(0, 3)
@@ -16,9 +17,17 @@ export function HomePage() {
       {/* Hero Section */}
       <section className="relative h-150 md:h-175 overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          {/* <img
             src={featuredEvent.imageUrl}
             alt={featuredEvent.title}
+            className="w-full h-full object-cover"
+          /> */}
+          <Image
+            src={featuredEvent.imageUrl}
+            alt={featuredEvent.title}
+            fill
+            priority
+            sizes="100vw"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/50 to-transparent" />

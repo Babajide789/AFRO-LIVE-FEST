@@ -10,6 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { format } from 'date-fns';
+import Image from 'next/image';
 
 export function MapPage() {
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
@@ -45,11 +46,20 @@ export function MapPage() {
                 onClick={() => setSelectedEvent(event)}
               >
                 <div className="flex gap-3">
-                  <img
+                  {/* <img
                     src={event.imageUrl}
                     alt={event.title}
                     className="size-20 rounded-lg object-cover flex-shrink-0"
-                  />
+                  /> */}
+                  <Image
+          src={event.imageUrl}
+          alt={event.title}
+          fill
+          priority
+          sizes="100vw"
+          className="size-20 rounded-lg object-cover shrink-0"
+        />
+
                   <div className="flex-1 min-w-0">
                     <h3 className="font-semibold text-sm mb-1 line-clamp-1">
                       {event.title}
@@ -178,11 +188,19 @@ export function MapPage() {
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-[90%] max-w-md">
               <Card className="p-4 shadow-2xl">
                 <div className="flex gap-4">
-                  <img
+                  {/* <img
                     src={selectedEvent.imageUrl}
                     alt={selectedEvent.title}
-                    className="size-24 rounded-lg object-cover flex-shrink-0"
-                  />
+                    className="size-24 rounded-lg object-cover shrink-0"
+                  /> */}
+                  <Image
+          src={selectedEvent.imageUrl}
+          alt={selectedEvent.title}
+          fill
+          priority
+          sizes="100vw"
+          className="size-24 rounded-lg object-cover shrink-0"
+        />
                   <div className="flex-1 min-w-0">
                     <h3 className="font-bold mb-1 line-clamp-1">{selectedEvent.title}</h3>
                     <div className="flex items-center gap-2 text-sm text-gray-600 mb-1">

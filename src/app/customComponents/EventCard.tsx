@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { format } from 'date-fns';
 import { toast } from 'sonner';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface EventCardProps {
   event: Event;
@@ -40,9 +41,17 @@ export function EventCard({ event, featured = false }: EventCardProps) {
   return (
     <Card className={`overflow-hidden group hover:shadow-xl transition-all duration-300 ${featured ? 'border-2 border-[#008751]' : ''}`}>
       <div className="relative overflow-hidden aspect-16/10">
-        <img
+        {/* <img
           src={event.imageUrl}
           alt={event.title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        /> */}
+        <Image
+          src={event.imageUrl}
+          alt={event.title}
+          fill
+          priority
+          sizes="100vw"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
         <div className="absolute top-3 right-3">
@@ -92,30 +101,30 @@ export function EventCard({ event, featured = false }: EventCardProps) {
         </div>
 
         <div className="flex items-center gap-3">
-  <Link href={`/events/${event.slug}`} className="flex-1">
-    <Button 
-      variant="outline" 
-      className="w-full group/btn border-[#008751] text-[#008751] hover:bg-[#008751] hover:text-white"
-    >
-      View Details
-      <ArrowRight className="size-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-    </Button>
-  </Link>
+          <Link href={`/events/${event.slug}`} className="flex-1">
+            <Button 
+              variant="outline" 
+              className="w-full group/btn border-[#008751] text-[#008751] hover:bg-[#008751] hover:text-white"
+            >
+              View Details
+              <ArrowRight className="size-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
 
-  <Button 
-    className="bg-linear-to-r from-[#008751] to-[#FF6B00] hover:opacity-90"
-    disabled={event.status === 'sold-out'}
-    onClick={() => {
-      if (event.status !== 'sold-out') {
-        toast.success('Redirecting to ticket purchase...', {
-          description: `Get your tickets for ${event.title}`
-        })
-      }
-    }}
-  >
-    {event.status === 'sold-out' ? 'Sold Out' : 'Buy Tickets'}
-  </Button>
-</div>
+          <Button 
+            className="bg-linear-to-r from-[#008751] to-[#FF6B00] hover:opacity-90"
+            disabled={event.status === 'sold-out'}
+            onClick={() => {
+              if (event.status !== 'sold-out') {
+                toast.success('Redirecting to ticket purchase...', {
+                  description: `Get your tickets for ${event.title}`
+                })
+              }
+            }}
+          >
+            {event.status === 'sold-out' ? 'Sold Out' : 'Buy Tickets'}
+          </Button>
+        </div>
 
       </div>
     </Card>

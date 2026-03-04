@@ -7,8 +7,6 @@ import {
   Users,
   Clock,
   ArrowLeft,
-  Share2,
-  Heart,
 } from 'lucide-react'
 import { format } from 'date-fns'
 import { toast } from 'sonner'
@@ -213,7 +211,6 @@ const hasTickets = Object.keys(selectedTiers).length > 0
           </div>
 
           {/* Sidebar */}
-          {/* Sidebar */}
 <Card className="p-6 sticky top-20 h-fit">
   <h3 className="text-xl font-bold mb-4">Get Tickets</h3>
 
@@ -272,59 +269,32 @@ const hasTickets = Object.keys(selectedTiers).length > 0
     )
   })}
 
-  <Separator className="my-6" />
+    {/* Add to Cart */}
+  <Button
+    className="w-full"
+    disabled={!hasTickets}
+    onClick={() => {
+      const cartItems = Object.entries(selectedTiers).map(
+        ([tierId, quantity]) => {
+          const tier = event.ticketTiers.find(t => t.id === tierId)!
 
-  {/* Add to Cart */}
-<Button
-  className="w-full"
-  disabled={!hasTickets}
-  onClick={() => {
-    const cartItems = Object.entries(selectedTiers).map(
-      ([tierId, quantity]) => {
-        const tier = event.ticketTiers.find(t => t.id === tierId)!
-
-        return {
-          eventId: event.id,
-          tierId: tier.id,
-          name: `${event.title} – ${tier.name}`,
-          price: tier.price,
-          quantity,
+          return {
+            eventId: event.id,
+            tierId: tier.id,
+            name: `${event.title} – ${tier.name}`,
+            price: tier.price,
+            quantity,
+          }
         }
-      }
-    )
+      )
 
-    addItems(cartItems)
+      addItems(cartItems)
 
-    toast.success('Tickets added to cart 🎉')
-  }}
->
-  Add to Cart
-</Button>
-
-
-
-  {/* <div className="flex gap-2 mt-4">
-    <Button
-      variant="outline"
-      className="flex-1"
-      onClick={() => toast.success('Saved')}
-    >
-      <Heart className="size-4 mr-2" />
-      Save
-    </Button>
-
-    <Button
-      variant="outline"
-      className="flex-1"
-      onClick={() => {
-        navigator.clipboard.writeText(window.location.href)
-        toast.success('Link copied')
-      }}
-    >
-      <Share2 className="size-4 mr-2" />
-      Share
-    </Button>
-  </div> */}
+      toast.success('Tickets added to cart 🎉')
+    }}
+  >
+    Add to Cart
+  </Button>
 </Card>
         </div>
       </div>
