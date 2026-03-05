@@ -21,5 +21,6 @@ model Order {
   reference String   @unique
   emailSent Boolean  @default(false)
   qrCode    String?
+  qrUrl     String?   // ← add this
   createdAt DateTime @default(now())
 }

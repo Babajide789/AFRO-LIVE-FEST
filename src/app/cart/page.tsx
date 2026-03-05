@@ -40,14 +40,8 @@ export default function CartPage() {
 
     const res = await fetch('/api/verify-payment', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        reference,
-        customer,
-        cartItems: items,
-      }),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ reference, customer, cartItems: items }),
     })
 
     const data = await res.json()
@@ -58,6 +52,10 @@ export default function CartPage() {
 
     toast.success('Payment verified 🎉')
     clearCart()
+
+    // ✅ Redirect to success page with orderId
+    window.location.href = `/payment-success?orderId=${data.orderId}`
+
   } catch (err) {
     console.error(err)
     toast.error('Payment verification failed')
