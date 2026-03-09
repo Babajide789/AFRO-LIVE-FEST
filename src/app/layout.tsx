@@ -5,6 +5,7 @@ import { Header } from "./customComponents/Header";
 import { Footer } from "./customComponents/Footer";
 import { CartProvider } from "./context/CartContext";
 import Script from 'next/script'
+import { Analytics } from "@vercel/analytics/next"
 
 
 const geistSans = Geist({
@@ -33,13 +34,14 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Script
-  src="https://js.paystack.co/v1/inline.js"
-  strategy="beforeInteractive"
-/>
+          src="https://js.paystack.co/v1/inline.js"
+          strategy="beforeInteractive"
+        />
 
         <CartProvider>
-<Header/>
-         {children}
+          <Header/>
+          
+          {children}
 
         </CartProvider>
         
