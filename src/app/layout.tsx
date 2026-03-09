@@ -7,7 +7,6 @@ import { CartProvider } from "./context/CartContext";
 import Script from 'next/script'
 import { Analytics } from "@vercel/analytics/next"
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,9 +24,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
@@ -39,13 +38,14 @@ export default function RootLayout({
         />
 
         <CartProvider>
-          <Header/>
-          
+          <Header />
+
           {children}
 
+          <Footer />
         </CartProvider>
-        
-        <Footer/>
+
+        <Analytics />
       </body>
     </html>
   );
