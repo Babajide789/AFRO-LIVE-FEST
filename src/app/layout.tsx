@@ -18,8 +18,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Afro Live Fest",
-  description: "Experience the rhythm of Africa at Afro Live Fest! Join us for an unforgettable celebration of music, culture, and unity. Get your tickets now and be part of the ultimate Afrobeat experience!",
+  title: "Afrolive — Discover Live Music & Events",
+  description:
+    "Discover and book tickets for the best concerts, festivals and live music events across Nigeria.",
 };
 
 export default function RootLayout({
