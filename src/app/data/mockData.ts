@@ -5,7 +5,7 @@ export const mockArtists: Artist[] = [
     id: '1',
     name: 'Wizkid',
     genre: 'Afrobeats',
-    imageUrl: 'https://images.unsplash.com/photo-1744492407882-f58d42a6baf1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuaWdlcmlhbiUyMGFydGlzdCUyMHBlcmZvcm1pbmclMjBzdGFnZXxlbnwxfHx8fDE3Njk4NDkzMzd8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    imageUrl: '/images/wizkid/artist/wizkid12.webp',
     bio: 'Wizkid is one of Africa\'s biggest music stars, known for his smooth Afrobeats sound.',
     instagramUrl: 'https://instagram.com/wizkidayo'
   },
@@ -13,7 +13,7 @@ export const mockArtists: Artist[] = [
     id: '2',
     name: 'Burna Boy',
     genre: 'Afrobeats',
-    imageUrl: 'https://images.unsplash.com/photo-1766650577040-0bb7070328ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoaXBob3AlMjByYXBwZXIlMjBtaWNyb3Bob25lfGVufDF8fHx8MTc2OTg0OTMzOXww&ixlib=rb-4.1.0&q=80&w=1080',
+    imageUrl: '/images/burnaboy/artist/burnaboy1.jpg',
     bio: 'Grammy-winning artist Burna Boy brings authentic African Giant energy to every stage.',
     instagramUrl: 'https://instagram.com/burnaboygram'
   },
@@ -21,7 +21,7 @@ export const mockArtists: Artist[] = [
     id: '3',
     name: 'Tems',
     genre: 'R&B',
-    imageUrl: 'https://images.unsplash.com/photo-1761901219072-491a18f3ccd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnb3NwZWwlMjBjaG9pciUyMHBlcmZvcm1hbmNlfGVufDF8fHx8MTc2OTg0OTMzOHww&ixlib=rb-4.1.0&q=80&w=1080',
+    imageUrl: '/images/tems/artist/tems1.webp',
     bio: 'Tems has taken the world by storm with her soulful voice and unique sound.',
     instagramUrl: 'https://instagram.com/temsbaby'
   },
@@ -35,11 +35,11 @@ export const mockArtists: Artist[] = [
   },
   {
     id: '5',
-    name: 'Sinach',
-    genre: 'Gospel',
-    imageUrl: 'https://images.unsplash.com/photo-1761901219072-491a18f3ccd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnb3NwZWwlMjBjaG9pciUyMHBlcmZvcm1hbmNlfGVufDF8fHx8MTc2OTg0OTMzOHww&ixlib=rb-4.1.0&q=80&w=1080',
+    name: 'Rema',
+    genre: 'Afrobeats',
+    imageUrl: '/images/rema/artist/rema7.webp',
     bio: 'Sinach is one of the most influential gospel artists in Africa.',
-    instagramUrl: 'https://instagram.com/sinach'
+    instagramUrl: 'https://instagram.com/rema'
   },
   {
     id: '6',
@@ -62,7 +62,7 @@ export const mockEvents: Event[] = [
     venue: 'Eko Atlantic City',
     city: 'Lagos',
     genre: ['Afrobeats', 'Amapiano', 'Hip-Hop'],
-    imageUrl: 'https://images.unsplash.com/photo-1756978303719-57095d8bd250?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXNpYyUyMGZlc3RpdmFsJTIwY29uY2VydCUyMGNyb3dkfGVufDF8fHx8MTc2OTg0OTMzNnww&ixlib=rb-4.1.0&q=80&w=1080',
+    imageUrl: '/images/wizkid/event/wizkid5.webp',
     featured: true,
     artists: [mockArtists[0], mockArtists[1], mockArtists[3]],
     ticketTiers: [
@@ -88,7 +88,7 @@ export const mockEvents: Event[] = [
     venue: 'Velodrome Stadium',
     city: 'Abuja',
     genre: ['Afrobeats'],
-    imageUrl: 'https://images.unsplash.com/photo-1763178466088-09e3678eb56b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25jZXJ0JTIwdmVudWUlMjBvdXRkb29yJTIwZmVzdGl2YWx8ZW58MXx8fHwxNzY5ODQ5MzM3fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    imageUrl: '/images/burnaboy/event/burnaboy5.jpg',
     featured: true,
     artists: [mockArtists[1]],
     ticketTiers: [
@@ -106,17 +106,17 @@ export const mockEvents: Event[] = [
   },
   {
     id: '3',
-    slug: 'gospel-praise-fest-port-harcourt',
-    title: 'Gospel Praise Festival',
-    description: 'A powerful night of worship and praise featuring Nigeria\'s top gospel artists. Join us for an uplifting spiritual experience.',
+    slug: 'tems-live-in-lagos-tour',
+    title: 'Tems Music Festival',
+    description: 'The African Queen in the flesh in real time.',
     date: '2026-04-20',
     time: '17:00',
     venue: 'Liberation Stadium',
-    city: 'Port Harcourt',
-    genre: ['Gospel'],
-    imageUrl: 'https://images.unsplash.com/photo-1761901219072-491a18f3ccd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnb3NwZWwlMjBjaG9pciUyMHBlcmZvcm1hbmNlfGVufDF8fHx8MTc2OTg0OTMzOHww&ixlib=rb-4.1.0&q=80&w=1080',
+    city: 'Laagos',
+    genre: ['R&B'],
+    imageUrl: '/images/tems/artist/tems4.jpg',
     featured: false,
-    artists: [mockArtists[4]],
+    artists: [mockArtists[2]],
     ticketTiers: [
       { id: 't7', name: 'General', price: 5000, available: true, description: 'General admission' },
       { id: 't8', name: 'VIP', price: 15000, available: true, description: 'VIP seating area' },
@@ -131,14 +131,14 @@ export const mockEvents: Event[] = [
   },
   {
     id: '4',
-    slug: 'ibadan-jazz-night',
-    title: 'Ibadan Jazz & Highlife Night',
-    description: 'Celebrate the golden sounds of jazz and highlife music. An evening of smooth melodies and cultural heritage.',
+    slug: 'asake-night-in-lagos',
+    title: 'Asake Night in Lagos',
+    description: 'Celebrate the golden sounds of asake and enjoy music. An evening of smooth melodies and cultural heritage.',
     date: '2026-05-10',
     time: '19:00',
     venue: 'Jogor Center',
-    city: 'Ibadan',
-    genre: ['Jazz', 'Highlife'],
+    city: 'Lagos',
+    genre: ['Afrobeats', 'Amapiano', 'Fuji'],
     imageUrl: 'https://images.unsplash.com/photo-1687589891886-a8578a54ef76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqYXp6JTIwYmFuZCUyMHNheG9waG9uZXxlbnwxfHx8fDE3Njk3Njg4NTJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
     featured: false,
     artists: [mockArtists[5]],
@@ -164,7 +164,7 @@ export const mockEvents: Event[] = [
     venue: 'Tafawa Balewa Square',
     city: 'Lagos',
     genre: ['Afrobeats', 'R&B'],
-    imageUrl: 'https://images.unsplash.com/photo-1744492407882-f58d42a6baf1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuaWdlcmlhbiUyMGFydGlzdCUyMHBlcmZvcm1pbmclMjBzdGFnZXxlbnwxfHx8fDE3Njk4NDkzMzd8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    imageUrl: '/images/wizkid/event/wizkid5.webp',
     featured: true,
     artists: [mockArtists[0], mockArtists[2]],
     ticketTiers: [
@@ -192,7 +192,7 @@ export const mockEvents: Event[] = [
     genre: ['Afrobeats', 'Highlife', 'Hip-Hop'],
     imageUrl: 'https://images.unsplash.com/photo-1756978303719-57095d8bd250?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXNpYyUyMGZlc3RpdmFsJTIwY29uY2VydCUyMGNyb3dkfGVufDF8fHx8MTc2OTg0OTMzNnww&ixlib=rb-4.1.0&q=80&w=1080',
     featured: false,
-    artists: [mockArtists[0], mockArtists[3], mockArtists[5]],
+    artists: [mockArtists[0], mockArtists[3], mockArtists[5], mockArtists[4]],
     ticketTiers: [
       { id: 't14', name: 'Festival Pass', price: 12000, available: true, description: 'Access to concert area' },
       { id: 't15', name: 'VIP Pass', price: 35000, available: true, description: 'VIP area with amenities' },
