@@ -143,7 +143,7 @@ export function HomePage() {
                     <Button
                       size="lg"
                       variant="outline"
-                      className="border-white text-white hover:bg-white hover:text-black"
+                      className="border-white text-black hover:bg-white hover:text-black"
                     >
                       Learn More
                       <ArrowRight className="size-4 ml-2" />
@@ -166,14 +166,14 @@ export function HomePage() {
 
         <button
           onClick={prevEvent}
-          className="absolute left-6 top-1/2 -translate-y-1/2 bg-black/40 backdrop-blur-sm p-3 rounded-full hover:bg-black/60 transition"
+          className="hidden md:flex absolute left-6 top-1/2 -translate-y-1/2 bg-black/40 backdrop-blur-sm p-3 rounded-full hover:bg-black/60 transition"
         >
           <ChevronLeft className="text-white" />
         </button>
 
         <button
           onClick={nextEvent}
-          className="absolute right-6 top-1/2 -translate-y-1/2 bg-black/40 backdrop-blur-sm p-3 rounded-full hover:bg-black/60 transition"
+          className="hidden md:flex absolute right-6 top-1/2 -translate-y-1/2 bg-black/40 backdrop-blur-sm p-3 rounded-full hover:bg-black/60 transition"
         >
           <ChevronRight className="text-white" />
         </button>

@@ -2,12 +2,9 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Music, Menu, X, ShoppingBag, ShoppingCart } from 'lucide-react'
+import { Music, ShoppingBag } from 'lucide-react'
 import { useState } from 'react'
-import { Button } from '@/components/ui/button'
 import { useCart } from '@/app/context/CartContext'
-
-
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -21,14 +18,22 @@ export function Header() {
   ]
 
   const isActive = (path: string) => pathname === path
-
-const { totalQuantity } = useCart()
-
+  const { totalQuantity } = useCart()
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-backdrop-filter:bg-white/80">
-      <div className="container mx-auto px-4">
+      
+      {/* Overlay */}
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 md:hidden"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
+
+      <div className="container mx-auto px-4 relative z-50">
         <div className="flex h-16 items-center justify-between">
+          
           {/* Logo */}
           <Link
             href="/"
@@ -60,37 +65,51 @@ const { totalQuantity } = useCart()
             ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* Cart */}
           <div className="hidden md:block">
             <Link href="/cart" className="relative">
-            <ShoppingBag className="size-6 text-gray-700" />
-            {totalQuantity > 0 && (
-            <span className="absolute -top-2 -right-2 bg-[#008751] text-white text-xs rounded-full px-2">
-              {totalQuantity}
-            </span>
-            )}
-          </Link>
-
+              <ShoppingBag className="size-6 text-gray-700" />
+              {totalQuantity > 0 && (
+                <span className="absolute -top-2 -right-2 bg-[#008751] text-white text-xs rounded-full px-2">
+                  {totalQuantity}
+                </span>
+              )}
+            </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Animated Hamburger */}
           <button
-            className="md:hidden"
+            className="md:hidden flex flex-col justify-center items-center w-10 h-10"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? (
-              <X className="size-6" />
-            ) : (
-              <Menu className="size-6" />
-            )}
+            <span
+              className={`block h-0.5 w-6 bg-black transition-all duration-300 ${
+                mobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-6 bg-black my-1 transition-all duration-300 ${
+                mobileMenuOpen ? 'opacity-0' : ''
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-6 bg-black transition-all duration-300 ${
+                mobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
+              }`}
+            />
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <nav className="md:hidden border-t py-4">
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ${
+            mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
+          <nav className="border-t py-4">
             <div className="flex flex-col gap-4">
+              
               {navLinks.map(link => (
                 <Link
                   key={link.href}
@@ -106,14 +125,19 @@ const { totalQuantity } = useCart()
                 </Link>
               ))}
 
-              <Link href="/cart" className="flex items-center gap-2">
-  <ShoppingBag className="size-5" />
-<span>Cart ({totalQuantity})</span>
-</Link>
+              <Link
+                href="/cart"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-2"
+              >
+                <ShoppingBag className="size-5" />
+                <span>Cart ({totalQuantity})</span>
+              </Link>
 
             </div>
           </nav>
-        )}
+        </div>
+
       </div>
     </header>
   )
