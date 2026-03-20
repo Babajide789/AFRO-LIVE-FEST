@@ -139,7 +139,7 @@ export const mockEvents: Event[] = [
     venue: 'Jogor Center',
     city: 'Lagos',
     genre: ['Afrobeats', 'Amapiano', 'Fuji'],
-    imageUrl: 'https://images.unsplash.com/photo-1687589891886-a8578a54ef76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqYXp6JTIwYmFuZCUyMHNheG9waG9uZXxlbnwxfHx8fDE3Njk3Njg4NTJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    imageUrl: '/images/asake/artist/asake2.jpg',
     featured: false,
     artists: [mockArtists[5]],
     ticketTiers: [
@@ -203,6 +203,82 @@ export const mockEvents: Event[] = [
       address: 'U.J. Esuene Stadium, Calabar'
     },
     capacity: 25000,
+    status: 'upcoming'
+  },
+  {
+    id: '7',
+    slug: 'asake-x-wizkid',
+    title: 'Asake x Wizkid Festival',
+    description: 'Starboy returns home with the Made in Lagos experience. Witness chart-topping hits performed live.',
+    date: '2026-06-25',
+    time: '21:00',
+    venue: 'Tafawa Balewa Square',
+    city: 'Lagos',
+    genre: ['Afrobeats', 'R&B'],
+    imageUrl: '/images/wizkid/event/wizkid5.webp',
+    featured: true,
+    artists: [mockArtists[0], mockArtists[2], mockArtists[5]],
+    ticketTiers: [
+      { id: 't11', name: 'Early Bird', price: 15000, available: false, description: 'Early bird special (Sold Out)' },
+      { id: 't12', name: 'Regular', price: 30000, available: true, description: 'General admission' },
+      { id: 't13', name: 'VIP', price: 80000, available: true, description: 'VIP section with bar access' },
+    ],
+    location: {
+      lat: 6.4444,
+      lng: 3.3964,
+      address: 'Tafawa Balewa Square, Lagos Island, Lagos'
+    },
+    capacity: 30000,
+    status: 'selling-fast'
+  },
+  {
+    id: '8',
+    slug: 'fola-fest',
+    title: 'Fola Live in Lagos',
+    description: 'Celebrate the golden sounds of asake and enjoy music. An evening of smooth melodies and cultural heritage.',
+    date: '2026-05-10',
+    time: '19:00',
+    venue: 'Balmoral Event Center',
+    city: 'Lagos',
+    genre: ['Afrobeats', 'Amapiano', 'Fuji'],
+    imageUrl: '/images/asake/artist/asake2.jpg',
+    featured: false,
+    artists: [mockArtists[5]],
+    ticketTiers: [
+      { id: 't9', name: 'Standard', price: 8000, available: true, description: 'Standard seating' },
+      { id: 't10', name: 'Premium', price: 20000, available: true, description: 'Premium tables with complimentary drinks' },
+    ],
+    location: {
+      lat: 7.3775,
+      lng: 3.9470,
+      address: 'Jogor Center, Ring Road, Ibadan'
+    },
+    capacity: 5000,
+    status: 'upcoming'
+  },
+   {
+    id: '9',
+    slug: 'afro-adura-carnival',
+    title: 'Afro Adura Carnival',
+    description: 'Celebrate the golden sounds of asake and enjoy music. An evening of smooth melodies and cultural heritage.',
+    date: '2026-05-10',
+    time: '19:00',
+    venue: 'Balmoral Event Center',
+    city: 'Lagos',
+    genre: ['Afrobeats', 'Amapiano', 'Fuji'],
+    imageUrl: '/images/asake/artist/asake2.jpg',
+    featured: true,
+    artists: [mockArtists[5]],
+    ticketTiers: [
+      { id: 't9', name: 'Standard', price: 8000, available: true, description: 'Standard seating' },
+      { id: 't10', name: 'Premium', price: 20000, available: true, description: 'Premium tables with complimentary drinks' },
+    ],
+    location: {
+      lat: 7.3775,
+      lng: 3.9470,
+      address: 'Jogor Center, Ring Road, Ibadan'
+    },
+    capacity: 5000,
     status: 'upcoming'
   },
 ];

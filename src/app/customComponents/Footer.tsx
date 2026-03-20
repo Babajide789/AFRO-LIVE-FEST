@@ -18,7 +18,7 @@ export function Footer() {
               <div className="flex size-10 items-center justify-center rounded-lg bg-linear-to-br from-[#008751] to-[#FF6B00]">
                 <Music className="size-6 text-white" />
               </div>
-              <span className="text-xl font-bold">NaijaLive</span>
+              <span className="text-xl font-bold">AfroLive</span>
             </Link>
             <p className="text-sm text-gray-600 mb-4">
               Nigeria&apos;s premier platform for discovering and experiencing the best concerts and music festivals.
