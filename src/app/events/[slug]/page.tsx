@@ -170,13 +170,15 @@ const hasTickets = Object.keys(selectedTiers).length > 0
                     key={artist.id}
                     className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg"
                   >
-                    <Image
-                      src={artist.imageUrl}
-                      alt={artist.name}
-                      width={64}
-                      height={64}
-                      className="rounded-full object-cover"
-                    />
+                    <div className="w-16 h-16 rounded-full overflow-hidden shrink-0">
+                      <Image
+                        src={artist.imageUrl}
+                        alt={artist.name}
+                        width={64}
+                        height={64}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                     <div>
                       <h3 className="font-semibold">{artist.name}</h3>
                       <p className="text-sm text-gray-600">{artist.genre}</p>

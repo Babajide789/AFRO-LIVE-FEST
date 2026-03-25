@@ -22,13 +22,13 @@ export function NotFoundPage() {
           <Link href="/">
             <Button className="bg-linear-to-r from-[#008751] to-[#FF6B00] hover:opacity-90 w-full sm:w-auto">
               <Home className="size-4 mr-2" />
-              Back to Home
+                Back to Home
             </Button>
           </Link>
           <Link href="/events">
             <Button variant="outline" className="w-full sm:w-auto">
               <Search className="size-4 mr-2" />
-              Browse Events
+                Browse Events
             </Button>
           </Link>
         </div>

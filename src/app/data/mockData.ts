@@ -29,7 +29,7 @@ export const mockArtists: Artist[] = [
     id: '4',
     name: 'Asake',
     genre: 'Amapiano',
-    imageUrl: 'https://images.unsplash.com/photo-1600542552868-56ed242290e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaiUyMG1peGluZyUyMHR1cm50YWJsZXN8ZW58MXx8fHwxNzY5ODQ5MzM4fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    imageUrl: '/images/asake/artist/asake5.webp',
     bio: 'Asake blends Amapiano with Afrobeats for an electrifying performance.',
     instagramUrl: 'https://instagram.com/asakemusic'
   },
@@ -38,7 +38,7 @@ export const mockArtists: Artist[] = [
     name: 'Rema',
     genre: 'Afrobeats',
     imageUrl: '/images/rema/artist/rema7.webp',
-    bio: 'Sinach is one of the most influential gospel artists in Africa.',
+    bio: 'Rema is one of the most influential artists of his generation.',
     instagramUrl: 'https://instagram.com/rema'
   },
   {
@@ -48,6 +48,30 @@ export const mockArtists: Artist[] = [
     imageUrl: 'https://images.unsplash.com/photo-1687589891886-a8578a54ef76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqYXp6JTIwYmFuZCUyMHNheG9waG9uZXxlbnwxfHx8fDE3Njk3Njg4NTJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
     bio: 'The Cavemen bring modern Highlife music with traditional instruments.',
     instagramUrl: 'https://instagram.com/thecavemen'
+  },
+  {
+    id: '7',
+    name: 'TML Vibes',
+    genre: 'Afrobeats',
+    imageUrl: '/images/afroadura/artist/tml2.jpeg',
+    bio: 'TML Vibes is a dynamic Afrobeats group that brings fresh energy to the music scene.',
+    instagramUrl: 'https://instagram.com/tmlvibes'
+  },
+  {
+    id: '8',
+    name: 'Bhadboi OML',
+    genre: 'Afrobeats',
+    imageUrl: '/images/afroadura/artist/oml2.webp',
+    bio: 'Bhadboi OML is a rising Afrobeats artist known for his unique sound and energetic performances.',
+    instagramUrl: 'https://instagram.com/bhadboiOML'
+  },
+  {
+    id: '9',
+    name: 'T. I Blaze',
+    genre: 'Afrobeats',
+    imageUrl: '/images/afroadura/artist/tiblaze2.jpeg',
+    bio: 'T. I Blaze is a rising Afrobeats artist known for his unique sound and energetic performances.',
+    instagramUrl: 'https://instagram.com/tiblaze'
   },
 ];
 
@@ -243,31 +267,6 @@ export const mockEvents: Event[] = [
     genre: ['Afrobeats', 'Amapiano', 'Fuji'],
     imageUrl: '/images/asake/artist/asake2.jpg',
     featured: false,
-    artists: [mockArtists[5]],
-    ticketTiers: [
-      { id: 't9', name: 'Standard', price: 8000, available: true, description: 'Standard seating' },
-      { id: 't10', name: 'Premium', price: 20000, available: true, description: 'Premium tables with complimentary drinks' },
-    ],
-    location: {
-      lat: 7.3775,
-      lng: 3.9470,
-      address: 'Jogor Center, Ring Road, Ibadan'
-    },
-    capacity: 5000,
-    status: 'upcoming'
-  },
-   {
-    id: '9',
-    slug: 'afro-adura-carnival',
-    title: 'Afro Adura Carnival',
-    description: 'Celebrate the golden sounds of asake and enjoy music. An evening of smooth melodies and cultural heritage.',
-    date: '2026-05-10',
-    time: '19:00',
-    venue: 'Balmoral Event Center',
-    city: 'Lagos',
-    genre: ['Afrobeats', 'Amapiano', 'Fuji'],
-    imageUrl: '/images/asake/artist/asake2.jpg',
-    featured: true,
     artists: [mockArtists[5]],
     ticketTiers: [
       { id: 't9', name: 'Standard', price: 8000, available: true, description: 'Standard seating' },
