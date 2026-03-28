@@ -165,7 +165,7 @@ export const mockEvents: Event[] = [
     genre: ['Afrobeats', 'Amapiano', 'Fuji'],
     imageUrl: '/images/asake/artist/asake2.jpg',
     featured: false,
-    artists: [mockArtists[5]],
+    artists: [mockArtists[3]],
     ticketTiers: [
       { id: 't9', name: 'Standard', price: 8000, available: true, description: 'Standard seating' },
       { id: 't10', name: 'Premium', price: 20000, available: true, description: 'Premium tables with complimentary drinks' },
@@ -241,7 +241,7 @@ export const mockEvents: Event[] = [
     genre: ['Afrobeats', 'R&B'],
     imageUrl: '/images/wizkid/event/wizkid5.webp',
     featured: true,
-    artists: [mockArtists[0], mockArtists[2], mockArtists[5]],
+    artists: [mockArtists[0], mockArtists[2], mockArtists[3], mockArtists[4]],
     ticketTiers: [
       { id: 't11', name: 'Early Bird', price: 15000, available: false, description: 'Early bird special (Sold Out)' },
       { id: 't12', name: 'Regular', price: 30000, available: true, description: 'General admission' },
