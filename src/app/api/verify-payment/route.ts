@@ -31,7 +31,8 @@ async function sendTicketEmail(
     subject: '🎉 Your Afro Live Fest Ticket',
     html: `
       <div style="font-family: sans-serif; max-width: 600px; margin: auto; background: #0a0a0a; color: #fff; padding: 32px; border-radius: 16px;">
-        <h1 style="color: #e11d48; margin-bottom: 4px;">🎟️ Afro Live Fest</h1>
+        
+        <h1 style="color: #FF6B00; margin-bottom: 4px;">🎟️ Afro Live Fest</h1>
         <p style="color: #aaa;">Your ticket is confirmed!</p>
 
         <p>Hi <strong>${fullName}</strong>,</p>
@@ -40,19 +41,21 @@ async function sendTicketEmail(
         <div style="text-align:center; margin: 24px 0;">
           <img
             src="${qrUrl}"
-            alt="Your Ticket QR Code"
             width="200"
             height="200"
-            style="border: 4px solid #e11d48; border-radius: 12px; display:block; margin: 0 auto;"
+            style="border: 4px solid #008751; border-radius: 12px;"
           />
         </div>
 
         <div style="background:#1a1a1a; border-radius:12px; padding:16px; font-size:14px;">
           <p><span style="color:#aaa;">Name:</span> <strong>${fullName}</strong></p>
-          <p><span style="color:#aaa;">Reference:</span> <strong style="color:#e11d48;">${reference}</strong></p>
+          <p><span style="color:#aaa;">Reference:</span> <strong style="color:#FF6B00;">${reference}</strong></p>
         </div>
 
-        <p style="color:#555; font-size:12px; margin-top:24px;">See you at the event! 🎶</p>
+        <p style="color:#888; font-size:12px; margin-top:24px;">
+          See you at the event! 🎶
+        </p>
+
       </div>
     `,
   })

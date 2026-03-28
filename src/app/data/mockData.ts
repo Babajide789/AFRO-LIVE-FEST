@@ -45,7 +45,7 @@ export const mockArtists: Artist[] = [
     id: '6',
     name: 'The Cavemen',
     genre: 'Highlife',
-    imageUrl: 'https://images.unsplash.com/photo-1687589891886-a8578a54ef76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqYXp6JTIwYmFuZCUyMHNheG9waG9uZXxlbnwxfHx8fDE3Njk3Njg4NTJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    imageUrl: '/images/cavemen/cavemen2.webp',
     bio: 'The Cavemen bring modern Highlife music with traditional instruments.',
     instagramUrl: 'https://instagram.com/thecavemen'
   },
@@ -265,7 +265,7 @@ export const mockEvents: Event[] = [
     venue: 'Balmoral Event Center',
     city: 'Lagos',
     genre: ['Afrobeats', 'Amapiano', 'Fuji'],
-    imageUrl: '/images/asake/artist/asake2.jpg',
+    imageUrl: '/images/fola/fola1.webp',
     featured: false,
     artists: [mockArtists[5]],
     ticketTiers: [
