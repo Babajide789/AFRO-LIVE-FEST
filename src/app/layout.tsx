@@ -21,6 +21,32 @@ export const metadata: Metadata = {
   title: "Afrolive — Discover Live Music & Events",
   description:
     "Discover and book tickets for the best concerts, festivals and live music events across Nigeria.",
+
+  openGraph: {
+    title: "Afrolive — Discover Live Music & Events",
+    description:
+      "Discover and book tickets for the best concerts, festivals and live music events across Nigeria.",
+    url: "https://afro-live-fest.vercel.app/",
+    siteName: "Afrolive",
+    images: [
+      {
+        url: "/afrolive-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Afrolive App Preview",
+      },
+    ],
+    locale: "en_NG",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Afrolive — Discover Live Music & Events",
+    description:
+      "Discover and book tickets for the best concerts, festivals and live music events across Nigeria.",
+    images: ["/afrolive-image.png"],
+  },
 };
 
 export default function RootLayout({
