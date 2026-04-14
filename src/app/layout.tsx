@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     siteName: "Afrolive",
     images: [
       {
-        url: "https://afro-live-fest.vercel.app/thumb-img.png",
+        url: "https://afro-live-fest.vercel.app/thumbnail-default.png",
         width: 1200,
         height: 630,
         alt: "Afrolive — Live Events & Concerts Platform",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     description:
       "Find and book tickets to the best concerts, festivals, and live experiences across Nigeria.",
     images: [
-      "https://afro-live-fest.vercel.app/thumb-img.png",
+      "https://afro-live-fest.vercel.app/thumbnail-default.png",
     ],
     // creator: "@afrolive", 
   },
@@ -88,12 +88,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta property="og:image" content="https://afro-live-fest.vercel.app/thumb-img.png" />
+        <meta property="og:image" content="https://afro-live-fest.vercel.app/thumbnail-default.png" />
         <meta property="og:title" content="Afrolive — Discover Live Music & Events" />
         <meta property="og:description" content="Discover and book tickets for live events across Nigeria." />
         <meta name="twitter:card" content="summary_large_image" />
       </head>
-      
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
