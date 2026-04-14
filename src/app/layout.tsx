@@ -17,9 +17,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://afro-live-fest.vercel.app"),
-  
+
   title: "Afrolive — Discover Live Music & Events",
   description:
     "Discover and book tickets for the best concerts, festivals and live music events across Nigeria.",
