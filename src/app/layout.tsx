@@ -22,22 +22,41 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   metadataBase: new URL("https://afro-live-fest.vercel.app"),
 
-  title: "Afrolive — Discover Live Music & Events",
+  title:
+    "Afrolive — Discover Live Music, Concerts & Events in Nigeria",
   description:
-    "Discover and book tickets for the best concerts, festivals and live music events across Nigeria.",
+    "Discover and book tickets for the best concerts, festivals and live music events across Nigeria. Experience Afrobeats, culture, and live entertainment like never before.",
+
+  keywords: [
+    "Afrolive",
+    "Live Events Nigeria",
+    "Concert Tickets Nigeria",
+    "Afrobeats Events",
+    "Music Festivals Nigeria",
+    "Event Booking Platform",
+    "Lagos Concerts",
+    "Live Music Africa",
+    "Entertainment Platform Nigeria",
+  ],
+
+  authors: [{ name: "Afrolive Team" }],
+  creator: "Afrolive",
+  publisher: "Afrolive",
+  category: "Entertainment",
 
   openGraph: {
-    title: "Afrolive — Discover Live Music & Events",
+    title:
+      "Afrolive — Discover Live Music, Concerts & Events in Nigeria",
     description:
-      "Discover and book tickets for the best concerts, festivals and live music events across Nigeria.",
-    url: "https://afro-live-fest.vercel.app/",
+      "Book tickets to the hottest concerts, festivals, and live events across Nigeria. Your gateway to unforgettable live experiences.",
+    url: "https://afro-live-fest.vercel.app",
     siteName: "Afrolive",
     images: [
       {
         url: "https://afro-live-fest.vercel.app/thumb-img.png",
         width: 1200,
         height: 630,
-        alt: "Afrolive App Preview",
+        alt: "Afrolive — Live Events & Concerts Platform",
       },
     ],
     locale: "en_NG",
@@ -46,10 +65,18 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Afrolive — Discover Live Music & Events",
+    title:
+      "Afrolive — Discover Live Music & Events in Nigeria",
     description:
-      "Discover and book tickets for the best concerts, festivals and live music events across Nigeria.",
-    images: ["https://afro-live-fest.vercel.app/thumb-img.png"],
+      "Find and book tickets to the best concerts, festivals, and live experiences across Nigeria.",
+    images: [
+      "https://afro-live-fest.vercel.app/thumb-img.png",
+    ],
+    // creator: "@afrolive", 
+  },
+
+  alternates: {
+    canonical: "https://afro-live-fest.vercel.app",
   },
 };
 
