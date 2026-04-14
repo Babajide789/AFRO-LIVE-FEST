@@ -18,6 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://afro-live-fest.vercel.app"),
+  
   title: "Afrolive — Discover Live Music & Events",
   description:
     "Discover and book tickets for the best concerts, festivals and live music events across Nigeria.",
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "Afrolive",
     images: [
       {
-        url: "/afrolive-image.png",
+        url: "https://afro-live-fest.vercel.app/afrolive-image.png",
         width: 1200,
         height: 630,
         alt: "Afrolive App Preview",
@@ -45,7 +47,7 @@ export const metadata: Metadata = {
     title: "Afrolive — Discover Live Music & Events",
     description:
       "Discover and book tickets for the best concerts, festivals and live music events across Nigeria.",
-    images: ["/afrolive-image.png"],
+    images: ["https://afro-live-fest.vercel.app/afrolive-image.png"],
   },
 };
 
