@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "Afrolive",
     images: [
       {
-        url: "https://afro-live-fest.vercel.app/afrolive-image.png",
+        url: "https://afro-live-fest.vercel.app/thumb-img.png",
         width: 1200,
         height: 630,
         alt: "Afrolive App Preview",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "Afrolive — Discover Live Music & Events",
     description:
       "Discover and book tickets for the best concerts, festivals and live music events across Nigeria.",
-    images: ["https://afro-live-fest.vercel.app/afrolive-image.png"],
+    images: ["https://afro-live-fest.vercel.app/thumb-img.png"],
   },
 };
 
