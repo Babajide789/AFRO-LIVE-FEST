@@ -85,7 +85,7 @@ export const mockEvents: Event[] = [
     time: '18:00',
     venue: 'Eko Atlantic City',
     city: 'Lagos',
-    genre: ['Afrobeats', 'Amapiano', 'Hip-Hop'],
+    genres: ['Afrobeats', 'Amapiano', 'Hip-Hop'],
     imageUrl: '/images/wizkid/event/wizkid5.webp',
     featured: true,
     artists: [mockArtists[0], mockArtists[1], mockArtists[3]],
