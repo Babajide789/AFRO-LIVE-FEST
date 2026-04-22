@@ -1,3 +1,5 @@
+"use client"
+
 import { Calendar, MapPin, Users, ArrowRight } from 'lucide-react';
 import { Event } from '@/app/types';
 import { Card } from '@/components/ui/card';
@@ -70,7 +72,7 @@ export function EventCard({ event, featured = false }: EventCardProps) {
       
       <div className="p-5">
         <div className="flex gap-2 mb-3 flex-wrap">
-          {event.genre.slice(0, 2).map((genre) => (
+          {event.genres.slice(0, 2).map((genre) => (
             <Badge key={genre} variant="outline" className="text-xs">
               {genre}
             </Badge>

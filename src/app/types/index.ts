@@ -7,7 +7,7 @@ export interface Event {
   time: string;
   venue: string;
   city: string;
-  genre: string[];
+  genres: string[];
   imageUrl: string;
   featured: boolean;
   artists: Artist[];

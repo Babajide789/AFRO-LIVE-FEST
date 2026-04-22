@@ -24,3 +24,47 @@ model Order {
   qrUrl     String?   // ← add this
   createdAt DateTime @default(now())
 }
+
+model Artist {
+  id           String   @id @default(uuid())
+  name         String   @unique
+  genre        String
+  imageUrl     String
+  bio          String
+  instagramUrl String?
+  events       Event[]  @relation("EventArtists")
+}
+
+model Event {
+  id          String   @id @default(uuid())
+  slug        String   @unique
+  title       String
+  description String
+  date        DateTime
+  time        String
+  venue       String
+  city        String
+  imageUrl    String
+  featured    Boolean  @default(false)
+  capacity    Int
+  status      String
+
+  lat         Float
+  lng         Float
+  address     String
+
+  artists     Artist[] @relation("EventArtists")
+  ticketTiers TicketTier[]
+  genres      String[] // keep simple for now
+}
+
+model TicketTier {
+  id          String  @id @default(uuid())
+  name        String
+  price       Int
+  available   Boolean
+  description String
+
+  eventId     String
+  event       Event   @relation(fields: [eventId], references: [id])
+}
