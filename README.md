@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+# 🎵 AfroLive Fest
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+AfroLive Fest is a modern event discovery and ticketing platform focused on African music culture — helping users explore concerts, festivals, and artists across Nigeria.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Project Vision
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The goal of this project is to build a **scalable, production-ready event platform** that goes beyond static UI:
 
-## Learn More
+- Real event data (no mock data)
+- Artist & event discovery
+- Ticket purchasing system
+- Clean, modern UI/UX
+- API-driven architecture
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧠 My Approach (Build in Public)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is being built with a **learn → build → refactor → scale** mindset.
 
-## Deploy on Vercel
+Key principles:
+- Start simple (mock data)
+- Introduce real backend (API + Prisma)
+- Refactor for scalability
+- Optimize for real-world production
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ⚙️ Tech Stack
+
+### Frontend
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+
+### Backend
+- Next.js API Routes
+- Prisma ORM
+- Neon PostgreSQL
+
+### State Management
+- React Context API (Cart system)
+
+---
+
+## 🏗️ Architecture Evolution
+
+### Phase 1: Static UI
+- Built UI using mock data
+- Focus on layout, responsiveness, and UX
+
+### Phase 2: API Integration ✅
+- Replaced `mockData.ts` with real API
+- Created `/api/artists` endpoint
+- Connected Prisma to Neon database
+- Seeded database with artist data
+
+### Key Learning:
+> UI ≠ Product  
+> Data flow and architecture matter more than visuals.
+
+---
+
+## 🔥 Challenges Faced
+
+### 1. Empty API Response
+- API returned `[]`
+- Root cause: Database had no seeded data
+- Fix: Created and ran Prisma seed script
+
+---
+
+### 2. Prisma Type Errors
+- `Property 'artist' does not exist on PrismaClient`
+- Fix: Updated Prisma schema + ran:
+  ```bash
+  npx prisma generate
