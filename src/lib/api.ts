@@ -1,6 +1,6 @@
 import { Event, Artist } from "@/app/types";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://afro-live-fest.vercel.app";
 
 export async function getArtists(): Promise<Artist[]> {
   const res = await fetch(`${BASE_URL}/api/artists`, { cache: "no-store" });

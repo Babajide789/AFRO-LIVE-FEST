@@ -3,7 +3,7 @@ import { Artist } from "@/app/types";
 
 async function getArtists(): Promise<Artist[]> {
   const baseUrl =
-  process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  process.env.NEXT_PUBLIC_BASE_URL || "https://afro-live-fest.vercel.app";
 
   const res = await fetch(`${baseUrl}/api/artists`, {
     cache: "no-store",
